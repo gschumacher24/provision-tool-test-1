@@ -47,7 +47,7 @@ jobs:
 
       - name: Generate report
         if: github.event_name == 'pull_request'
-        run: toolkit provision show phdatapartner-demo:plan:latest --output=provision-report.html
+        run: toolkit provision show hhaaxde-tz42070:plan:latest --output=provision-report.html
 
       - name: Apply changes
         run: toolkit provision apply
@@ -59,7 +59,7 @@ jobs:
 
       - name: Generate report
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
-        run: toolkit provision show phdatapartner-demo:apply:latest --output=provision-report.html
+        run: toolkit provision show hhaaxde-tz42070:apply:latest --output=provision-report.html
 
       - name: Upload report
         uses: actions/upload-artifact@v4
