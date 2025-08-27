@@ -53,6 +53,10 @@ jobs:
         run: toolkit provision apply
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
 
+      - name: List snapshots
+        run: toolkit provision list
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+
       - name: Generate report
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         run: toolkit provision show phdatapartner-demo:apply:latest --output=provision-report.html
