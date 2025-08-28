@@ -10,3 +10,5 @@ entries:
     env: dev
   - project_name: manhattan
     env: prod
+  - project_name: finance
+    env: dev
