@@ -25,6 +25,8 @@ env:
 
 jobs:
   build:
+    name: Provision Tool
+
     runs-on: ubuntu-latest
 
     steps:
