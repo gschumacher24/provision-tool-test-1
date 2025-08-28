@@ -10,3 +10,4 @@ entries:
     env: dev
   - project_name: manhattan
     env: prod
+&*(%&$*( bad line that should fail build
