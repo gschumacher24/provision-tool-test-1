@@ -10,7 +10,7 @@ on:
       - .github/workflows/provision.yaml
   push:
     branches:
-      - master
+      - main
     paths:
       - "provision/**"
       - .github/workflows/provision.yaml
@@ -53,14 +53,14 @@ jobs:
 
       - name: Apply changes
         run: toolkit provision apply
-        if: github.event.pull_request.merged == true || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
 
       - name: List snapshots
         run: toolkit provision list
-        if: github.event.pull_request.merged == true || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
 
       - name: Generate report
-        if: github.event.pull_request.merged == true || github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         run: toolkit provision show hhaaxde-tz42070:apply:latest --output=provision-report.html
 
       - name: Upload report
